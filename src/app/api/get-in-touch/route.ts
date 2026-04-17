@@ -2,14 +2,20 @@ import { Resend } from "resend";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { name, email, message } = body;
+    const { name, email, message } = await req.json();
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const apiKey = process.env.RESEND_API_KEY;
+    const emailTo = process.env.EMAIL_TO;
+
+    if (!apiKey) {
+      throw new Error("Missing RESEND_API_KEY");
+    }
+
+    const resend = new Resend(apiKey);
 
     const data = await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
-      to: process.env.EMAIL_TO as string,
+      to: emailTo as string,
       subject: "New Message From Portfolio",
       replyTo: email,
       html: `
@@ -25,6 +31,6 @@ export async function POST(req: Request) {
 
   } catch (error) {
     console.error(error);
-    return Response.json({ success: false });
+    return Response.json({ success: false, error });
   }
 }

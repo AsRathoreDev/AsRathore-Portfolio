@@ -1,11 +1,8 @@
-import "./globals.css";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import "./globals.css"
+import Navbar from "@/components/Navbar"
 
 export const metadata = {
-  title: "As Rathore's Portfolio",
+  title: "AdiVerse Portfolio",
   description: "Developer Portfolio of AsRathore",
 }
 
@@ -15,8 +12,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body>{children}</body>
+    <html lang="en">
+
+      <body>
+
+        <Navbar />
+
+        {children}
+
+      </body>
+
     </html>
   )
 }

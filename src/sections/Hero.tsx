@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { ReactTyped } from "react-typed"
 import MagneticButton from "@/components/ui/MagneticButton"
 
-
 const text = "Aditya Singh Rathore"
 
 export default function Hero() {
@@ -27,8 +26,6 @@ const letter = {
 }
 
 return (
-
-
 
 <section 
 id="hub"
@@ -54,7 +51,7 @@ Radhe Radhe
 variants={container}
 initial="hidden"
 animate="visible"
-className="text-5xl md:text-7xl font-bold leading-tight"
+className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight"
 >
 
 <span className="text-white">I'm </span>
@@ -125,47 +122,48 @@ experiences that feel smooth, elegant and impactful.
 </motion.p>
 
 {/* Buttons */}
-{/* Buttons */}
-<div className="mt-10 flex flex-wrap justify-center gap-6">
-  
-  <MagneticButton>
-    <a
-      href="#get-in-touch"
-      className="px-8 py-3 rounded-full 
-      bg-gradient-to-r from-yellow-500 to-purple-600
-      text-black font-semibold
-      shadow-lg shadow-yellow-500/30
-      hover:shadow-yellow-500/60
-      hover:scale-105
-      transition duration-300"
-    >
-      Get In Touch
-    </a>
-  </MagneticButton>
 
-  <MagneticButton>
-    <a
-      href="/resume.jpg"
-      target="_blank"
-      className="px-8 py-3 rounded-full
-      border border-white/30
-      text-white
-      hover:bg-white
-      hover:text-black
-      hover:scale-105
-      transition duration-300"
-    >
-      Get Resume
-    </a>
-  </MagneticButton>
+<div className="mt-12 flex flex-wrap justify-center gap-8">
+
+<MagneticButton>
+<a
+href="#get-in-touch"
+className="px-8 py-3 rounded-full 
+bg-gradient-to-r from-yellow-500 to-purple-600
+text-black font-semibold
+shadow-lg shadow-yellow-500/30
+hover:shadow-yellow-500/60
+hover:scale-105
+transition duration-300"
+>
+Get In Touch
+</a>
+</MagneticButton>
+
+<MagneticButton>
+<a
+href="/resume.jpg"
+target="_blank"
+className="px-8 py-3 rounded-full
+border border-white/30
+text-white
+hover:bg-white
+hover:text-black
+hover:scale-105
+transition duration-300"
+>
+Get Resume
+</a>
+</MagneticButton>
 
 </div>
+
 {/* Scroll Indicator */}
 
 <motion.div
 animate={{ y:[0,12,0] }}
 transition={{ repeat:Infinity, duration:1.5 }}
-className="absolute left-1/2 -bottom-20 -translate-x-1/2 text-gray-400 text-xl"
+className="absolute left-1/2 -bottom-16 md:-bottom-20 -translate-x-1/2 text-gray-400 text-xl"
 >
 ↓
 </motion.div>
@@ -173,8 +171,6 @@ className="absolute left-1/2 -bottom-20 -translate-x-1/2 text-gray-400 text-xl"
 </div>
 
 </section>
-
-
 
 )
 }

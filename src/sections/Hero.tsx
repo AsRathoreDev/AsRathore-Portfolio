@@ -25,13 +25,15 @@ const letter = {
   }
 }
 
+const words = text.split(" ")
+
 return (
 
 <section 
 id="hub"
-className="min-h-screen flex items-center justify-center px-6">
+className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-x-hidden">
 
-<div className="max-w-4xl text-center relative">
+<div className="max-w-4xl w-full text-center relative mx-auto">
 
 {/* Greeting */}
 
@@ -51,21 +53,21 @@ Radhe Radhe
 variants={container}
 initial="hidden"
 animate="visible"
-className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight"
+className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.2] flex flex-wrap justify-center gap-x-3 gap-y-2"
 >
 
-<span className="text-white">I'm </span>
+<span className="text-white">I'm</span>
 
-<span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+<span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent flex flex-wrap justify-center gap-x-3 gap-y-2">
 
-{text.split("").map((char, index) => (
+{words.map((word, index) => (
 
 <motion.span
 key={index}
 variants={letter}
 className="inline-block"
 >
-{char === " " ? "\u00A0" : char}
+{word}
 </motion.span>
 
 ))}
@@ -89,15 +91,16 @@ className="h-[3px] bg-gradient-to-r from-yellow-400 to-purple-500 mx-auto mt-6 r
 initial={{ opacity:0 }}
 animate={{ opacity:1 }}
 transition={{ delay:1.6 }}
-className="text-xl md:text-2xl mt-8 text-gray-300"
+className="text-lg sm:text-xl md:text-2xl mt-8 text-gray-300"
 >
 
 <ReactTyped
 strings={[
 "Full Stack Developer",
-"Next.js Specialist",
-"Creative Web Builder",
-"Crafting Modern Web Experiences"
+"Next.js Focused",
+"Modern Web Enthusiast",
+"Quick Learner",
+"Passionate Coder"
 ]}
 typeSpeed={70}
 backSpeed={40}
@@ -112,7 +115,7 @@ loop
 initial={{ opacity:0, y:30 }}
 animate={{ opacity:1, y:0 }}
 transition={{ delay:2 }}
-className="mt-8 text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto"
+className="mt-8 text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
 >
 
 I build modern, fast and interactive web applications with a strong focus on
@@ -123,7 +126,7 @@ experiences that feel smooth, elegant and impactful.
 
 {/* Buttons */}
 
-<div className="mt-12 flex flex-wrap justify-center gap-8">
+<div className="mt-12 flex flex-wrap justify-center gap-6">
 
 <MagneticButton>
 <a
@@ -157,16 +160,6 @@ Get Resume
 </MagneticButton>
 
 </div>
-
-{/* Scroll Indicator */}
-
-<motion.div
-animate={{ y:[0,12,0] }}
-transition={{ repeat:Infinity, duration:1.5 }}
-className="absolute left-1/2 -bottom-16 md:-bottom-20 -translate-x-1/2 text-gray-400 text-xl"
->
-↓
-</motion.div>
 
 </div>
 

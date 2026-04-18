@@ -37,8 +37,6 @@ export default function Navbar() {
 
       lastScroll.current = current
 
-      // detect active section
-
       const sections = navLinks.map(link =>
         document.querySelector(link.href)
       )
@@ -65,6 +63,7 @@ export default function Navbar() {
 
   return (
     <>
+
       {/* Scroll Progress */}
 
       <motion.div
@@ -77,35 +76,37 @@ export default function Navbar() {
       <motion.nav
         animate={{ y: hidden ? -100 : 0 }}
         transition={{ duration: 0.35 }}
-        className="fixed top-3 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-40
-        backdrop-blur-lg bg-black/40 border border-white/10
-        rounded-xl shadow-lg"
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-40
+        backdrop-blur-xl bg-black/50 border border-white/10
+        rounded-2xl shadow-lg"
       >
 
-        <div className="flex items-center justify-between px-6 py-2">
+        <div className="flex items-center justify-between px-6 py-3">
 
           {/* Logo */}
 
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-3">
 
             <motion.div
               whileHover={{ scale: 1.08 }}
-              className="bg-white p-[3px] rounded-lg"
+              className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 border border-white/10"
             >
               <Image
                 src="/logo.jpg"
                 alt="AsRathore Logo"
-                width={34}
-                height={34}
-                className="rounded-md"
+                width={28}
+                height={28}
+                className="rounded-md object-contain"
               />
             </motion.div>
+
+           
 
           </Link>
 
           {/* Desktop Links */}
 
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-8">
 
             {navLinks.map((link) => {
 
